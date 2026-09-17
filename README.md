@@ -99,6 +99,7 @@ Calorie-Tracker/
 ## ⚡ Quick Start & Installation Guide
 
 ### Prerequisites
+
 - **Node.js**: v18.0.0 or higher
 - **MongoDB**: Local MongoDB instance (`mongodb://localhost:27017/nutripulse`) or MongoDB Atlas connection string.
 
@@ -148,48 +149,24 @@ The web application will open at **`http://localhost:5173`**.
 
 ## 📮 API Endpoints Overview
 
-| Method | Endpoint | Access | Description |
-|---|---|---|---|
-| **POST** | `/api/v1/auth/register` | Public | Register new user account |
-| **POST** | `/api/v1/auth/login` | Public | Authenticate user & issue JWT tokens |
-| **POST** | `/api/v1/auth/refresh` | Public | Refresh expired access token |
-| **POST** | `/api/v1/auth/logout` | Private | Revoke refresh token cookie |
-| **GET** | `/api/v1/auth/me` | Private | Get current user profile & auth status |
-| **POST** | `/api/v1/profile` | Private | Save biometrics & calculate BMR/TDEE targets |
-| **GET** | `/api/v1/profile` | Private | Get biometric health profile |
-| **GET** | `/api/v1/foods` | Private | Search verified & custom food items |
-| **POST** | `/api/v1/foods` | Private | Create custom food item |
-| **POST** | `/api/v1/logs/meals` | Private | Log meal items (breakfast, lunch, dinner, snack) |
-| **GET** | `/api/v1/logs/summary` | Private | Get dynamic net calorie & macro summary |
-| **POST** | `/api/v1/logs/exercise` | Private | Log exercise session & calorie burn |
-| **GET** | `/api/v1/recommendations` | Private | AI-driven remaining macro recommendation menu |
-| **POST** | `/api/v1/progress` | Private | Log weight & body fat progress entry |
-| **GET** | `/api/v1/analytics/calorie-trends` | Private | Recharts formatted calorie trends |
-| **GET** | `/api/v1/admin/users` | Admin | List all system users |
-| **PUT** | `/api/v1/admin/users/:id/role` | Admin | Update user role |
+| Method   | Endpoint                           | Access  | Description                                      |
+| -------- | ---------------------------------- | ------- | ------------------------------------------------ |
+| **POST** | `/api/v1/auth/register`            | Public  | Register new user account                        |
+| **POST** | `/api/v1/auth/login`               | Public  | Authenticate user & issue JWT tokens             |
+| **POST** | `/api/v1/auth/refresh`             | Public  | Refresh expired access token                     |
+| **POST** | `/api/v1/auth/logout`              | Private | Revoke refresh token cookie                      |
+| **GET**  | `/api/v1/auth/me`                  | Private | Get current user profile & auth status           |
+| **POST** | `/api/v1/profile`                  | Private | Save biometrics & calculate BMR/TDEE targets     |
+| **GET**  | `/api/v1/profile`                  | Private | Get biometric health profile                     |
+| **GET**  | `/api/v1/foods`                    | Private | Search verified & custom food items              |
+| **POST** | `/api/v1/foods`                    | Private | Create custom food item                          |
+| **POST** | `/api/v1/logs/meals`               | Private | Log meal items (breakfast, lunch, dinner, snack) |
+| **GET**  | `/api/v1/logs/summary`             | Private | Get dynamic net calorie & macro summary          |
+| **POST** | `/api/v1/logs/exercise`            | Private | Log exercise session & calorie burn              |
+| **GET**  | `/api/v1/recommendations`          | Private | AI-driven remaining macro recommendation menu    |
+| **POST** | `/api/v1/progress`                 | Private | Log weight & body fat progress entry             |
+| **GET**  | `/api/v1/analytics/calorie-trends` | Private | Recharts formatted calorie trends                |
+| **GET**  | `/api/v1/admin/users`              | Admin   | List all system users                            |
+| **PUT**  | `/api/v1/admin/users/:id/role`     | Admin   | Update user role                                 |
 
 ---
-
-## 🧪 Postman Collection Testing
-
-A pre-configured Postman collection is included in the project root: **`postman_collection.json`**.
-
-### How to Import into Postman:
-1. Open **Postman**.
-2. Click **Import** -> Select `postman_collection.json`.
-3. Set the environment variable `{{baseUrl}}` to `http://localhost:5050/api/v1`.
-4. Run **Auth -> Login User** to automatically populate the `{{accessToken}}` variable for subsequent requests!
-
----
-
-## 🤝 Git & GitHub Workflow Rules
-
-When contributing to this repository:
-1. Follow **Conventional Commits** (`feat:`, `fix:`, `docs:`, `refactor:`, `style:`).
-2. Never commit `.env` files containing secrets to version control.
-3. Ensure all code passes `npm run build` cleanly before creating a Pull Request.
-
----
-
-## 📄 License
-Distributed under the MIT License.
